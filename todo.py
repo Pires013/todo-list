@@ -7,7 +7,6 @@ tarefas_refazer = []
 ARQUIVO_JSON = 'tarefas.json'
 
 def ler_dados():
-    """Lê o arquivo JSON. Se não existir, retorna listas vazias."""
     if not os.path.exists(ARQUIVO_JSON):
         return [], []
     
@@ -16,7 +15,6 @@ def ler_dados():
         return dados.get('tarefas', []), dados.get('tarefas_refazer', [])
 
 def salvar_dados(tarefas, tarefas_refazer):
-    """Salva o estado atual das duas listas no arquivo JSON."""
     dados = {
         'tarefas': tarefas,
         'tarefas_refazer': tarefas_refazer
